@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+
+body{
+    background-color: #F7FAFC;
+}
+
+.container{
+    padding: 48px 0;
+    max-width: 1113px;
+    margin: auto;
+}
+
+h1{
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.1125rem;
+    color: #2D3748;
+    margin-bottom: 50px;
+    font-variant: small-caps;
+}
+
+header h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2D3748;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+header h3{
+    font-size: 1rem;
+    color: #2D3748;
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+header span{
+    font-size: 1rem;
+    color: #718096;
+    /*Por que não colocar o margin-bottom aqui ?*/
+}
+
+header a{
+    color: #2F80ED;
+}
+
+hr{
+    border-color: rgba(203,213,224,.3);
+    margin-top: 36px;
+    margin-bottom: 97px;
+}
+
+.card{
+    width: 350px;
+    background-color: #FFF;
+    margin-right: 26px;
+    box-shadow: 0px 4px 4px rgba(152, 149, 149, 0.25);
+    display: inline-block;
+}
+
+.card:last-of-type{ /*Poderia usar o last of child ?*/
+    margin-right: 0;
+}
+
+.card-conteudo{
+    padding: 28px 25px;
+}
+
+.card-conteudo h2{
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #2D3748;
+    margin-bottom: 36px;
+}
+
+.card-conteudo span{
+    font-size: 3.125rem;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    display: block;
+    margin-bottom: 36px;
+}
+
+.card-conteudo p{
+    font-size: 1rem;
+    color: #4A5568;
+    margin-bottom: 44px;
+}
+
+.card-conteudo ul{
+    text-align: center;
+    list-style-type: none;
+}
+
+.card-conteudo li{
+    font-weight: 700;
+    margin-bottom: 34px;
+    color: #000;
+}
+
+.card a{
+    font-weight: 700;
+    color: #2D3748;
+    text-align: center;
+    display: block;
+    background-color: #EDF2F7;
+    text-decoration: none;
+    padding: 2em;
+}
+
+.card:nth-child(2) a{
+    background-color: #EA0774;
+    margin-top: 40px;
+    color: #FFF;
+} 

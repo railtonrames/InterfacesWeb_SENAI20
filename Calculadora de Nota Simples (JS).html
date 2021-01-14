@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas de Alunos</title>
+    <style type="text/css">
+        .botao {
+            -moz-box-shadow: 0px 10px 14px -7px #000000;
+	        -webkit-box-shadow: 0px 10px 14px -7px #000000;
+	        box-shadow: 0px 10px 14px -7px #000000;
+            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7) );
+            background:-moz-linear-gradient( center top, #007dc1 5%, #0061a7 100% );
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7');
+            background-color:#007dc1;
+            -webkit-border-top-left-radius:3px;
+            -moz-border-radius-topleft:3px;
+            border-top-left-radius:3px;
+            -webkit-border-top-right-radius:3px;
+            -moz-border-radius-topright:3px;
+            border-top-right-radius:3px;
+            -webkit-border-bottom-right-radius:3px;
+            -moz-border-radius-bottomright:3px;
+            border-bottom-right-radius:3px;
+            -webkit-border-bottom-left-radius:3px;
+            -moz-border-radius-bottomleft:3px;
+            border-bottom-left-radius:3px;
+        text-indent:0;
+            border:1px solid #124d77;
+            display:inline-block;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:15px;
+            font-weight:bold;
+            font-style:normal;
+        height:50px;
+            line-height:50px;
+        width:140px;
+            text-decoration:none;
+            text-align:center;
+            text-shadow:0px 1px 0px #154682;
+        }.botao:hover {
+            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1) );
+            background:-moz-linear-gradient( center top, #0061a7 5%, #007dc1 100% );
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1');
+            background-color:#0061a7;
+        }.botao:active {
+            position:relative;
+            top:1px;
+        }
+        body{
+            background-color: rgba(0, 0, 0, .2);
+            text-align: center;
+        }
+        .container-modal{
+            position: relative;
+            height: 98vh
+        }
+        .modal{
+            color: #000;
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -150%);
+        }
+        </style>   
+</head>
+
+<body>
+    <div class="container-modal">
+        <div class="modal">
+            <h1 style="color: #ffffff;text-shadow: black 0.1em 0.1em 0.2em">Calcula Notas</h1>
+            <form>
+                <fieldset id="id_dados"><legend style="font-weight: bold; font-size: 150%;">Dados</legend>
+                    <p><label for="id_nome">Nome:</label>
+                    <input type="name" id="id_nome" name="n_nome" maxlength="40" required></p>
+                    <p><label for="id_nota1">Nota 1:</label>
+                    <input type="number" id="id_nota1" name="n_nota1" maxlength="4" required></p>
+                    <p><label for="id_nota2">Nota 2:</label>
+                    <input type="number" id="id_nota2" name="n_nota2" maxlength="4" required></p>
+                </fieldset>
+                <br>
+    
+                <script>
+                    function calcular(){
+                        if(document.getElementById("id_nome").value == "" || document.getElementById("id_nota1").value == "" || document.getElementById("id_nota2").value == ""){
+                            alert('Por favor, preencha todos os campos !')
+                        }
+                        else{
+                            var nome = document.getElementById("id_nome").value;
+                            document.getElementById("id_ola").innerHTML = "Olá,  " + nome;
+                            var mediaA = (parseInt(document.getElementById("id_nota1").value) + parseInt(document.getElementById("id_nota2").value))/2;
+                            document.getElementById("id_MA").innerHTML = mediaA;
+                            var mediaH = 2/(1/parseInt(document.getElementById("id_nota1").value) + 1/parseInt(document.getElementById("id_nota2").value));
+                            var mediaHArredondada = parseFloat(mediaH.toFixed(2)); 
+                            document.getElementById("id_MH").innerHTML = mediaHArredondada;
+                            if (mediaA > 6){
+                                document.getElementById("id_sit").innerHTML = "APROVADO.";
+                                document.getElementById("id_sit").style.color = "green";
+                            }else{
+                                document.getElementById("id_sit").innerHTML = "REPROVADO.";
+                                document.getElementById("id_sit").style.color = "red";
+                            }
+                            document.getElementById('id_resultados').style.display='block';
+                        }                        
+                    }
+                </script>
+    
+                <fieldset id="id_resultados" style="display: none; "><legend style="font-weight: bold; font-size: 150%;">Resultados</legend>
+                    <p><label id="id_ola">Vazio</label></p>
+                    <p><label for="id_sit">Situação:</label>
+                    <label id="id_sit">Vazio</label></p>
+                    <p><label for="id_MA">Média Aritmética:</label>
+                    <label id="id_MA">Vazio</p>
+                    <p><label for="id_MH">Média Harmônica:</label>
+                    <label id="id_MH" maxlengh="4">Vazio</p>
+                </fieldset>
+                <br>
+                <button type="button" onclick="calcular()" style="width: 99.3%;height: 50px;" class="botao">Calcular</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Martel+Sans:700,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #2D3037;
+    font-family: 'Martel Sans', sans-serif;;
+}
+section{
+    width: 85%;
+    margin: auto;
+    display: flex;
+}
+.container-textos__exercicios{
+    position: relative;
+    top: 50vh;
+    margin-bottom: 70vh;
+    transform: translateY(-50%);
+}
+.container-textos__exercicios:last-child{
+    margin-bottom: 36vh;
+}
+.textos__indicacao{
+    font-size: 18rem;
+    color: rgba(201, 109, 161,.13);
+    display: flex;
+    align-items: flex-start;
+    line-height: 16rem;
+    position: absolute;
+    top:-.55em;
+    z-index: -4;
+}
+sup{
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    color: rgba(201, 109, 161,.5);
+}
+.textos__titulo{
+    font-size: 3rem;
+    line-height: 1.2em;
+    color: #fff;
+    font-weight: 900;
+}
+.container-textos__botao{
+    background-color: #23232B;
+    margin-top: 1em;
+    margin-left: -6.5em;
+    width: 70%;
+    border-bottom:  3px solid #CB6EA3;
+    padding: 1.5em 0;
+}
+.container-textos__exercicios a{
+  margin:  5% -50% ;
+  padding: 1.5em 0 1.5em 51%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  background-color: #23232B;
+  border-bottom: 3px solid #CB6EA3;
+}
+svg{
+    margin-left: 1em;
+}
+
+.container-textos__exercicios a:hover,.container-textos__exercicios a:hover .ativo{
+    color: #23232B;
+    background-color: #CB6EA3;
+    stroke: #23232B;
+    transition: .2s ease-in-out;
+}
+.container-imagem{
+    position: fixed;
+    right: 7.5%;
+    top: 5%;
+    width: 45%;  
+    z-index: -3;
+    display: flex;
+    justify-content: flex-end;
+}
+.container-imagem img{
+    max-width: 100%;
+}
+
+.icon{
+    position: fixed;
+    left: 50%;
+    bottom: 10%;
+    z-index: 1;
+    animation: icon-animacao 1.5s ease-in-out infinite alternate;
+}
+@keyframes icon-animacao{
+    to{
+        transform: translateY(20px);
+    }
+}
